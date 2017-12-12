@@ -7,7 +7,7 @@ import java.util.*;
 
 import static org.junit.Assert.*;
 
-public class MinusTest {
+public class PlusTest {
 
     Stack<Double> stack = new Stack<>();
     Map<String, Double> map = new HashMap<>();
@@ -16,12 +16,12 @@ public class MinusTest {
 
     @org.junit.Test
     public void execute() throws Exception {
-        Minus minus = new Minus();
+        Plus plus = new Plus();
         stack.push(2.);
-        stack.push(5.);
-        minus.execute(stack, map, str);
+        stack.push(5.2);
+        plus.execute(stack, map, str);
 
-        assertEquals(3., stack.peek(),.0);
+        assertEquals(7.2, stack.peek(),.0);
     }
 
 }

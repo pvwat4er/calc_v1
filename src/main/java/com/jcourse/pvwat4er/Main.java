@@ -14,7 +14,7 @@ public class Main {
         mapCmd.put("PUSH", new Push());
         mapCmd.put("+", new Plus());
         mapCmd.put("-", new Minus());
-        mapCmd.put("*", new Mult());
+        mapCmd.put("*", (Command) new Mult());
         mapCmd.put("/", new Div());
         mapCmd.put("SQRT", new Sqrt());
         mapCmd.put("PRINT", new Print());
@@ -24,9 +24,9 @@ public class Main {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String string = scanner.nextLine();
-                String[] line = string.split(" ");
+                String[] s = string.split(" ");
                 try {
-                    mapCmd.get(line[0]).execute(stack, definitions, line);
+                    mapCmd.get(s[0]).execute(stack, definitions, s);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
